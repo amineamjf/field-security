@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: field-security
+    runtime: node
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: cd server && node index.js
+    envVars:
+      - key: ADMIN_KEY
+        sync: false
+      - key: SECRET_DEV1
+        sync: false
+      - key: SECRET_DEV2
+        sync: false
