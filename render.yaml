@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     buildCommand: cd server && npm install
-    startCommand: cd server && node index.js
+    startCommand: cp -r server/worker-app worker-app && cp -r server/dashboard dashboard && cd server && node index.js
     envVars:
       - key: ADMIN_KEY
         sync: false
